@@ -19,20 +19,20 @@ Y_test = tf.keras.utils.to_categorical(y_test, 10)
 
 model = Sequential()
 
-model.add(Conv2D(128, (2, 2), input_shape = X_train.shape[1:]))
+model.add(Conv2D(512, (2, 2), input_shape = X_train.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size = (2, 2)))
-model.add(Dropout(0.2))
+model.add(Dropout(0.1))
 
-model.add(Conv2D(128, (2, 2)))
+model.add(Conv2D(512, (2, 2)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size = (2, 2)))
-model.add(Dropout(0.2))
+model.add(Dropout(0.1))
 
 model.add(Flatten())
 model.add(Dense(512))
 model.add(Activation('relu'))
-model.add(Dropout(0.2))
+model.add(Dropout(0.1))
 
 model.add(Dense(10))
 model.add(Activation('softmax'))
