@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, Activation, Flatten, Dropout, BatchNormalization, SpatialDropout2D
+from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, Activation, Flatten, Dropout, BatchNormalization, SpatialDropout2D, GaussianNoise
 # from tensorflow.keras import optimizers
 import numpy as np
 
@@ -24,12 +24,14 @@ model.add(Conv2D(128, (3, 3), input_shape = X_train.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size = (2, 2)))
 model.add(SpatialDropout2D(0.2))
+model.add(GaussianNoise(0.2))
 model.add(BatchNormalization())
 
 model.add(Conv2D(128, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size = (2, 2)))
 model.add(SpatialDropout2D(0.2))
+model.add(GaussianNoise(0.2))
 model.add(BatchNormalization())
 
 model.add(Flatten())
