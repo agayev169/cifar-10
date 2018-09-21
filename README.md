@@ -1,2 +1,3 @@
-# cifar-10
-A Neural Network for cifar-10 dataset
+# CIFAR-10
+A keras model built for CIFAT-10 dataset. (Ref: https://www.cs.toronto.edu/~kriz/cifar.html)
+Showed accuracy of 75.24%.
